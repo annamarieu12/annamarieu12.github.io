@@ -1,0 +1,89 @@
+body{
+    background-color: #f6bbff;
+    background-image:url(graphics/sky.png);
+}
+
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Ranchers", sans-serif;
+  font-weight: 400;
+  color: hotpink;
+  font-style: normal;
+  padding-left: 50px;
+  font-size:40px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 25px;
+  height: 80px; 
+  background-color: white; 
+}
+
+a {
+  color: hotpink;
+}
+
+p{
+
+  font-family: "Ranchers", sans-serif;
+  font-weight: 400;
+  color: hotpink;
+  font-style: normal;
+  font-size: 20px;
+  padding-left: 50px;
+}
+
+.second {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;   /* centers the whole row */
+    gap: 60px;                 /* space between frame + BIO */
+    margin-top: 70px; 
+}
+
+
+#frame {
+    display: block;      /* remove padding from the image */
+}
+
+.bio-block {
+    font-family: "Ranchers", sans-serif;
+    font-size: 20px;
+    color: hotpink;
+    margin-left: 80px;        /* pushes it away from the frame */
+    max-width: 500px;         /* keeps text tidy */
+    text-align: left;     /* centers the BIO text itself */
+}
+
+
+.third-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* centers the pictures + text */
+    gap: 10px;             /* space between the two mini items */
+}
+
+.mini-item {
+    text-align: center;
+    width: 100%;  
+}
+
+.mini-pic {
+    display: block;       /* ensures the image behaves like a block */
+    margin: 0 auto;       /* centers the image itself */
+}
+
+
+.mini-pic {
+    display: block;
+    margin: 0 auto;
+    width: 210px;          /* adjust size as needed */
+}
+
+.mini-text {
+    font-family: "Ranchers", sans-serif;
+    color: hotpink;
+    margin-top: 8px;
+    font-size: 18px;
+}
