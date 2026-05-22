@@ -5,7 +5,6 @@ body{
 
 
 .container {
-    position: absolute;
   display: flex;
   justify-content: space-between;
   font-family: "Ranchers", sans-serif;
@@ -26,7 +25,7 @@ a {
 }
 
 p{
-    position: absolute;
+
   font-family: "Ranchers", sans-serif;
   font-weight: 400;
   color: hotpink;
@@ -36,7 +35,6 @@ p{
 }
 
 .second {
-    position: absolute;
     display: flex;
     align-items: flex-start;
     justify-content: center;   /* centers the whole row */
@@ -46,12 +44,10 @@ p{
 
 
 #frame {
-    display: block;   
-    position: absolute;   /* remove padding from the image */
+    display: block;      /* remove padding from the image */
 }
 
 .bio-block {
-    position: absolute;
     font-family: "Ranchers", sans-serif;
     font-size: 20px;
     color: hotpink;
@@ -62,7 +58,6 @@ p{
 
 
 .third-block {
-    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;   /* centers the pictures + text */
@@ -70,27 +65,23 @@ p{
 }
 
 .mini-item {
-    position: absolute;
     text-align: center;
     width: 100%;  
 }
 
 .mini-pic {
-    position: absolute;
     display: block;       /* ensures the image behaves like a block */
     margin: 0 auto;       /* centers the image itself */
 }
 
 
 .mini-pic {
-    position: absolute;
     display: block;
     margin: 0 auto;
     width: 210px;          /* adjust size as needed */
 }
 
 .mini-text {
-    position: absolute;
     font-family: "Ranchers", sans-serif;
     color: hotpink;
     margin-top: 8px;
