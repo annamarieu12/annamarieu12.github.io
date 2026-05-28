@@ -9,20 +9,38 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Military Training.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Military Training" startnode="1" creator="Twine" creator-version="2.12.0" format="Harlowe" format-version="3.3.9" ifid="274C1186-DBEB-4612-A4CA-384384FFF0BE" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="start" tags="" position="575,125" size="100,100">&lt;h2&gt;Military Training Simulation&lt;/h2&gt;
+<tw-storydata name="Military Training" startnode="1" creator="Twine" creator-version="2.12.0" format="Harlowe" format-version="3.3.9" ifid="274C1186-DBEB-4612-A4CA-384384FFF0BE" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-story {
+  background-image: url("https://annamarieu12.github.io/graphics/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
-[[Score x points to win.|first]]
+tw-link, .enchantment-link {
+    color: white !important;
+    background-color: black !important;
+    padding: 2px 4px; /* Adds space around the text */
+}
 
-&lt;button onclick=&quot;newAudio(&#39;https://annamarieu12.github.io/audio/name.mp3).play()&quot;&gt;word&lt;/button&gt;
+tw-link:hover, .enchantment-link:hover {
+    color: black !important;
+    background-color: white !important; /* Inverts colors on hover */
+}
+tw-sidebar {
+    display: none !important;
+}
 
-&lt;audio src=&quot;https://annamarieu12.github.io/audio/name.mp3&quot; autoplay&gt;word&lt;/audio&gt;</tw-passagedata><tw-passagedata pid="2" name="second" tags="" position="575,375" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
-[Finals hit. You&#39;re a STEM major.]
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.storyAudio = new Audio("https://annamarieu12.github.io/noise.mp3");
+window.storyAudio.loop = true;
+window.storyAudio.volume = 0.3;</script><tw-passagedata pid="1" name="start" tags="" position="575,125" size="100,100">&lt;h2&gt;Military Training Simulation&lt;/h2&gt;
+
+[[Score 6.5 points and graduate to win.|first]]
+</tw-passagedata><tw-passagedata pid="2" name="second" tags="" position="575,375" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)][Finals hit. You&#39;re a STEM major.]
 
 [You have to think about job selection in the fall. GPA matters.]
 
 [But military training is soon, and you have to be on top of your game physically.]
-
 
 (link: &quot;Risk a B, workout instead of studying.&quot;)[
     (set: $pt to $pt + 1)
@@ -33,32 +51,25 @@
     (set: $pt to $pt - 1)
     (goto: &quot;third&quot;)
 ]
-</tw-passagedata><tw-passagedata pid="3" name="third" tags="" position="575,500" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
-[You leave in four days. Anxiety is setting in.]
+&lt;audio src = &quot;https://annamarieu12.github.io/nature.mp3&quot; autoplay loop&gt;&lt;/audio&gt;</tw-passagedata><tw-passagedata pid="3" name="third" tags="" position="575,500" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]]&lt;audio src = &quot;https://annamarieu12.github.io/nature.mp3&quot; autoplay loop&gt;&lt;/audio&gt;(if: $infractions is 3)[(goto: &quot;kicked&quot;)][You leave in four days and are starting to get a little nervous. You&#39;ve heard from friends already there. One was kicked out for not hitting standards. There are rumors of others that were sent home for undisclosed reasons.]
 
-[You&#39;ve heard from friends already there. One was kicked out for not hitting standards. There are rumors of others that were sent home for undisclosed reasons.]
-
-[It becomes clear that training is not going to be the breeze you thought. This makes you nervous.
-
-More information was sent out by the trainers. If you are given four or more infractions, you are at risk of being kicked out. Four infractions in 20 days sounds like plenty, but your friends have said some have gotten three infractions in two days.]
+[It becomes clear that training is not going to be the breeze you thought. More information was sent out by the trainers. If you are given four or more infractions, you are at risk of being kicked out. Four infractions in 20 days sounds like plenty, but your friends have said some have gotten three infractions in two days.]
 
 [What do you do?]
 
 (link:&quot;Have fun while you&#39;re home, four days of chilling won&#39;t hurt.&quot;)[
+	&lt;span onclick=&quot;window.storyAudio.play();&quot;&gt;&lt;/span&gt;
+    &lt;script&gt;window.storyAudio.play();&lt;/script&gt;
 	(set:$pt to $pt - 1)
     (goto:&quot;fourth&quot;)
     ]
    
 (link:&quot;Lock in. Workout twice a day until you leave, and study for hours. I have to make sure I pass. Risk burn out.&quot;)[
+	&lt;span onclick=&quot;window.storyAudio.play();&quot;&gt;&lt;/span&gt;
+    &lt;script&gt;window.storyAudio.play();&lt;/script&gt;
 	(set:$pt to $pt +1)
     (goto:&quot;fourth&quot;)
-    ]</tw-passagedata><tw-passagedata pid="4" name="fourth" tags="" position="575,625" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
-&lt;h3&gt;TD-0&lt;/h3&gt;
-&lt;h5&gt;Infractions: $infraction&lt;/h5&gt;
-&lt;h5&gt;Points: $points&lt;/h5&gt;
-
+    ]</tw-passagedata><tw-passagedata pid="4" name="fourth" tags="" position="575,625" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)]&lt;h3&gt;TD-0&lt;/h3&gt;
 {
 |Alarm&gt;[
 (link: &quot;Alarm&quot;)[
@@ -84,18 +95,18 @@ What do you do?
 ]
 ]
 ]
-}</tw-passagedata><tw-passagedata pid="5" name="first" tags="" position="575,250" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
-[You did it.]
+}
+
+[Infractions: $infractions]
+[Points: $points]</tw-passagedata><tw-passagedata pid="5" name="first" tags="" position="575,250" size="100,100">[You did it.]
 
 [You&#39;ve been in ROTC for two years.]
 
-[Two years of hard work, little sleep, and leadership training.]
+[Two years of hard work, little sleep, and leadership training.] [[What getting into Training meant to me.|tumor]]
 
 [Commissioning was never a guarantee. First, you had to be selected for and pass military training.]
 
 [Today, two months before you are slotted to go, you were selected to attend training this summer.]
-
 
 [[Go celebrate with friends and fellow cadets!|second]]
 
@@ -104,27 +115,16 @@ What do you do?
 (set: $pt to 0)
 (set: $infractions to 0)
 (set: $points to 0)
-
-</tw-passagedata><tw-passagedata pid="6" name="yay" tags="" position="625,750" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
-(set: $points to $points +1)
-&lt;h5&gt;Infractions: $infraction&lt;/h5&gt;
-&lt;h5&gt;Points: $points&lt;/h5&gt;
-
-[While taking in the overwhelming noises, you hear another cadet getting yelled at for entering the wrong in-processing line. They are getting an infraction for it.]
+&lt;audio src = &quot;https://annamarieu12.github.io/nature.mp3&quot; autoplay loop&gt;&lt;/audio&gt;</tw-passagedata><tw-passagedata pid="6" name="yay" tags="" position="625,750" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)](set: $points to $points +1)[While taking in the overwhelming noises, you hear another cadet getting yelled at for entering the wrong in-processing line. They are getting an infraction for it.]
 
 [You were about to make the same mistake!]
 
 [The importance of staying cool under pressure has a whole new meaning to you. Now, you know how to deal with it. &lt;strong&gt;&lt;i&gt;+1 point.&lt;/i&gt;&lt;/strong&gt;]
 
-[[Time for bed.|td1]]</tw-passagedata><tw-passagedata pid="7" name="infraction" tags="" position="525,750" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
-(set: $infraction to $infraction +1)
-(set: $overwhelm to 1)
-&lt;h5&gt;Infractions: $infraction&lt;/h5&gt;
-&lt;h5&gt;Points: $points&lt;/h5&gt;
+[[Time for bed.|td1]]
 
-[In your attempt to tune out the noise, you walk right by the commander. You didn&#39;t salute him.]
+[Infractions: $infractions]
+[Points: $points]</tw-passagedata><tw-passagedata pid="7" name="infraction" tags="" position="525,750" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)](set: $infractions to $infractions +1)(set: $overwhelm to 1)[In your attempt to tune out the noise, you walk right by the commander. You didn&#39;t salute him.]
 
 [He yells at you to turn around.]
 
@@ -136,13 +136,10 @@ What do you do?
 
 [And thus, your first infraction.]
 
+[[Time for bed.|td1]]
 
-[[Time for bed.|td1]]</tw-passagedata><tw-passagedata pid="8" name="td1" tags="" position="575,875" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
-&lt;h3&gt;TD-1&lt;/h3&gt;
-&lt;h5&gt;Infractions: $infraction&lt;/h5&gt;
-&lt;h5&gt;Points: $points&lt;/h5&gt;
-
+[Infractions: $infractions]
+[Points: $points]</tw-passagedata><tw-passagedata pid="8" name="td1" tags="" position="575,875" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)]&lt;h3&gt;TD-1&lt;/h3&gt;
 [Time for the fitness test. The first checklist item that can determine whether you graduate.]
 
 {
@@ -150,37 +147,26 @@ What do you do?
 (link: &quot;Do you pass?&quot;)[
 (if: $pt is 2)[
 	(set: $points to $points+1)
-	(replace: ?PRA)[Hard work pays off. You passed the fitness test with flying colors because you chose to train. &lt;strong&gt;&lt;i&gt;+1 point.&lt;/i&gt;&lt;/strong&gt; &lt;br&gt;&lt;br&gt;[[Go to TD-2|td4]]&lt;br&gt;&lt;br&gt; Infractions: $infraction
+	(replace: ?PRA)[Hard work pays off. You passed the fitness test with flying colors because you chose to train. &lt;strong&gt;&lt;i&gt;+1 point.&lt;/i&gt;&lt;/strong&gt; &lt;br&gt;&lt;br&gt;[[Go to TD-2|td4]]&lt;br&gt;&lt;br&gt; Infractions: $infractions&lt;br&gt;
 Points: $points
     ]]
     
 (else-if: $pt is 0)[
-	(replace: ?PRA)[You BARELY passed the fitness test. One less push-up and you would have failed. The trainers told you that they are watching you now, and your score has to improve. &lt;strong&gt;&lt;i&gt;+0 point.&lt;/i&gt;&lt;/strong&gt; &lt;br&gt;&lt;br&gt;[[Go to next day.|td4]]&lt;br&gt;&lt;br&gt; Infractions: $infraction&lt;br&gt;
+	(replace: ?PRA)[You BARELY passed the fitness test. One less push-up and you would have failed. The trainers told you that they are watching you now, and your score has to improve. &lt;strong&gt;&lt;i&gt;+0 point.&lt;/i&gt;&lt;/strong&gt; &lt;br&gt;&lt;br&gt;[[Go to next day.|td4]]&lt;br&gt;&lt;br&gt; Infractions: $infractions&lt;br&gt;
 Points: $points  
     ]]
 (else-if: $pt is -2)[
-	(replace: ?PRA)[Because you slacked off over the summer, you &lt;i&gt;FAILED&lt;/i&gt; the fitness test. Tomorrow morning is your second chance. If you do not pass, you are sent home. &lt;br&gt;&lt;br&gt; [[Go to TD-2|fail]] &lt;br&gt;&lt;br&gt;Infractions: $infraction&lt;br&gt;
+	(replace: ?PRA)[Because you slacked off over the summer, you &lt;i&gt;FAILED&lt;/i&gt; the fitness test. Tomorrow morning is your second chance. If you do not pass, you are sent home. &lt;br&gt;&lt;br&gt; [[Go to TD-2|fail]] &lt;br&gt;&lt;br&gt;Infractions: $infractions&lt;br&gt;
 Points: $points
 ]]
 ]]
-}
+}</tw-passagedata><tw-passagedata pid="9" name="td4" tags="" position="625,1000" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)]&lt;h3&gt;TD-4&lt;/h3&gt;(set: $rand to (random: 1,3))(set: $another to (random: 1,6))
+[Time to test your marching abilities.There are six evaluators, and two have been notorious for failing cadets. The issue is, you don&#39;t know which two they are. Choose an evaluator below.]
 
-</tw-passagedata><tw-passagedata pid="9" name="td4" tags="" position="625,1000" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
-&lt;h3&gt;TD-4&lt;/h3&gt;
-&lt;h5&gt;Infractions: $infraction&lt;/h5&gt;
-&lt;h5&gt;Points: $points&lt;/h5&gt;
-(set: $rand to (random: 1,3))(set: $another to (random: 1,6))
-[Time to test your marching abilities.]
-
-[There are six evaluators, and two have been notorious for failing cadets.]
-
-[The issue is, you don&#39;t know which two they are. Choose an evaluator below.]
-&lt;br&gt;
 
 {
 |eval1&gt;[
-(link: &quot;Trainer 1&quot;)[
+(link: &quot;Captain Rodriguez (5&#39;2 Female, 110 lbs)&quot;)[
 	(if: $rand is 1 or $rand is 2)[
     (set: $points to $points +1)
     (goto: &quot;t1&quot;)
@@ -193,7 +179,7 @@ Points: $points
 
 {
 |eval2&gt;[
-(link: &quot;Trainer 2&quot;)[
+(link: &quot;Major Brown (5&#39;11 Male, 190 lbs)&quot;)[
 	(if: $rand is 1 or $rand is 2)[
     (set: $points to $points +1)
     (goto: &quot;t2&quot;)
@@ -206,7 +192,7 @@ Points: $points
 
 {
 |eval3&gt;[
-(link: &quot;Trainer 3&quot;)[
+(link: &quot;Lieutenant Colonel Clark (6&#39;1 Female, 180 lbs)&quot;)[
 	(if: $rand is 1 or $rand is 2)[
     (set: $points to $points +1)
     (goto: &quot;t3&quot;)
@@ -219,7 +205,7 @@ Points: $points
 
 {
 |eval4&gt;[
-(link: &quot;Trainer 4&quot;)[
+(link: &quot;Major Acosta (5&#39;7 Male, 160 lbs)&quot;)[
 	(if: $rand is 1 or $rand is 2)[
     (set: $points to $points +1)
     (goto: &quot;t4&quot;)
@@ -232,7 +218,7 @@ Points: $points
 
 {
 |eval5&gt;[
-(link: &quot;Trainer 5&quot;)[
+(link: &quot;Major Whaley (5&#39;3 Male, 120 lbs)&quot;)[
 	(if: $rand is 1 or $rand is 2)[
     (set: $points to $points +1)
     (goto: &quot;t5&quot;)
@@ -245,7 +231,7 @@ Points: $points
 
 {
 |eval6&gt;[
-(link: &quot;Trainer 6&quot;)[
+(link: &quot;Captain Serrano (6&#39;5 Male, 220 lbs)&quot;)[
 	(if: $rand is 1 or $rand is 2)[
     (set: $points to $points +1)
     (goto: &quot;t6&quot;)
@@ -254,13 +240,12 @@ Points: $points
 	]
     ]
 ]
-}</tw-passagedata><tw-passagedata pid="10" name="fail" tags="" position="525,1000" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
-[The trainers plan your fitness test for 0500. Your career is on the line.]
+}
 
-[It&#39;s already 85 degrees. Your heart is thumping in your chest, even before you start the run.]
+[Infractions: $infractions]
+[Points: $points]</tw-passagedata><tw-passagedata pid="10" name="fail" tags="" position="525,1000" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)][The trainers plan your fitness test for 0500. Your career is on the line.]
 
-(set: $result to (random: 1, 2))
+[It&#39;s already 85 degrees. Your heart is thumping in your chest, even before you start the run.](set: $result to (random: 1, 2))
 
 {
 |result&gt;[
@@ -273,13 +258,9 @@ Points: $points
 ]]]]
 }
 
-&lt;h5&gt;Infractions: $infraction&lt;/h5&gt;
-&lt;h5&gt;Points: $points&lt;/h5&gt;</tw-passagedata><tw-passagedata pid="11" name="td" tags="" position="575,1350" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
+[Infractions: $infractions]
+[Points: $points]</tw-passagedata><tw-passagedata pid="11" name="td" tags="" position="575,1350" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)]
 &lt;h3&gt;TD-8&lt;/h3&gt;
-&lt;h5&gt;Infractions: $infraction&lt;/h5&gt;
-&lt;h5&gt;Points: $points&lt;/h5&gt;
-
 [You were selected to command your flight of cadets today.]
 
 [After a training session, you are supposed to march your flight to dinner. There is a strict time cut-off for arriving at dinner.]
@@ -288,141 +269,113 @@ Points: $points
 
 [[Risk getting caught, we HAVE to make it to dinner on time.|nowater]]
 
-[[Fill up waters. Risk missing dinner|missdinner]]
+[[Fill up waters. Risk missing dinner.|missdinner]](set: $nowater to (random: 1,2))
 
-(set: $nowater to (random: 1,2))</tw-passagedata><tw-passagedata pid="12" name="t-1" tags="" position="325,1225" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
-[Trainer 1 is an unfair evaluator. &lt;br&gt;&lt;br&gt;Roll the die to determine the outcome of your evaluation. &lt;br&gt;&lt;br&gt; Rolling a 1, 2, 4, or 6 passes you. A 3 and a 5 fails you, and will send you home.]
+
+[Infractions: $infractions&lt;/h5&gt;]
+[Points: $points]</tw-passagedata><tw-passagedata pid="12" name="t-1" tags="" position="325,1225" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)][Captain Rodriguez is an unfair evaluator. &lt;br&gt;&lt;br&gt;Roll the die to determine the outcome of your evaluation. &lt;br&gt;&lt;br&gt; Rolling a 1, 2, 4, or 6 passes you. A 3 and a 5 fails you, and will send you home.]
 
 {|roll&gt;[(link:&quot;Roll&quot;)[
         (if: $another is 3 or $another is 5)[
-        (replace:?roll)[&lt;br&gt;Trainer 1 failed you. The trainers send you to the commander&#39;s office, and you are sent home. [[Game Over.|start]]]]
+        (replace:?roll)[&lt;br&gt;Captain Rodriguez failed you. The trainers send you to the commander&#39;s office, and you are sent home. [[Game Over.|start]]]]
         (else:)[
         (set: $points to $points +1)
-        (replace:?roll)[&lt;br&gt;Trainer 1 passed you! &lt;shout&gt;&lt;i&gt;+1 point.&lt;/shout&gt;&lt;/i&gt; [[Next Day|td]]]]
+        (replace:?roll)[&lt;br&gt;Captain Rodriguez passed you! &lt;shout&gt;&lt;i&gt;+1 point.&lt;/shout&gt;&lt;/i&gt; [[Next Day|td]]]]
     ]]}
     
-&lt;h5&gt;Infractions: $infraction&lt;/h5&gt;
-&lt;h5&gt;Points: $points&lt;/h5&gt;</tw-passagedata><tw-passagedata pid="13" name="t-2" tags="" position="425,1225" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
-[Trainer 2 is an unfair evaluator. &lt;br&gt;&lt;br&gt;Roll the die to determine the outcome of your evaluation. &lt;br&gt;&lt;br&gt; Rolling a 1, 2, 4, or 6 passes you. A 3 and a 5 fails you, and will send you home.]
+    
+[Infractions: $infractions]
+[Points: $points]</tw-passagedata><tw-passagedata pid="13" name="t-2" tags="" position="425,1225" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)][Major Brown is an unfair evaluator. &lt;br&gt;&lt;br&gt;Roll the die to determine the outcome of your evaluation. &lt;br&gt;&lt;br&gt; Rolling a 1, 2, 4, or 6 passes you. A 3 and a 5 fails you, and will send you home.]
 
 {|roll&gt;[(link:&quot;Roll&quot;)[
         (if: $another is 3 or $another is 5)[
-        (replace:?roll)[&lt;br&gt;Trainer 2 failed you. The trainers send you to the commander&#39;s office, and you are sent home. [[Game Over.|start]]]]
+        (replace:?roll)[&lt;br&gt;Major Brown failed you. The trainers send you to the commander&#39;s office, and you are sent home. [[Game Over.|start]]]]
         (else:)[
         (set: $points to $points +1)
-        (replace:?roll)[&lt;br&gt;Trainer 2 passed you! &lt;shout&gt;&lt;i&gt;+1 point.&lt;/shout&gt;&lt;/i&gt; [[Next Day|td]]]]
+        (replace:?roll)[&lt;br&gt;Major Brown passed you! &lt;shout&gt;&lt;i&gt;+1 point.&lt;/shout&gt;&lt;/i&gt; [[Next Day|td]]]]
     ]]}
     
-&lt;h5&gt;Infractions: $infraction&lt;/h5&gt;
-&lt;h5&gt;Points: $points&lt;/h5&gt;</tw-passagedata><tw-passagedata pid="14" name="t-3" tags="" position="525,1225" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
-[Trainer 3 is an unfair evaluator. &lt;br&gt;&lt;br&gt;Roll the die to determine the outcome of your evaluation. &lt;br&gt;&lt;br&gt; Rolling a 1, 2, 4, or 6 passes you. A 3 and a 5 fails you, and will send you home.]
+    
+[Infractions: $infractions]
+[Points: $points]</tw-passagedata><tw-passagedata pid="14" name="t-3" tags="" position="525,1225" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)][Lieutenant Colonel Clark is an unfair evaluator. &lt;br&gt;&lt;br&gt;Roll the die to determine the outcome of your evaluation. &lt;br&gt;&lt;br&gt; Rolling a 1, 2, 4, or 6 passes you. A 3 and a 5 fails you, and will send you home.]
 
 {|roll&gt;[(link:&quot;Roll&quot;)[
         (if: $another is 3 or $another is 5)[
-        (replace:?roll)[&lt;br&gt;Trainer 3 failed you. The trainers send you to the commander&#39;s office, and you are sent home. [[Game Over.|start]]]]
+        (replace:?roll)[&lt;br&gt;Lieutenant Colonel Clark failed you. The trainers send you to the commander&#39;s office, and you are sent home. [[Game Over.|start]]]]
         (else:)[
         (set: $points to $points +1)
-        (replace:?roll)[&lt;br&gt;Trainer 3 passed you! &lt;shout&gt;&lt;i&gt;+1 point.&lt;/shout&gt;&lt;/i&gt; [[Next Day|td]]]]
+        (replace:?roll)[&lt;br&gt;Lieutenant Colonel Clark passed you! &lt;shout&gt;&lt;i&gt;+1 point.&lt;/shout&gt;&lt;/i&gt; [[Next Day|td]]]]
     ]]}
 
-&lt;h5&gt;Infractions: $infraction&lt;/h5&gt;
-&lt;h5&gt;Points: $points&lt;/h5&gt;</tw-passagedata><tw-passagedata pid="15" name="t-4" tags="" position="625,1225" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
-[Trainer 4 is an unfair evaluator. &lt;br&gt;&lt;br&gt;Roll the die to determine the outcome of your evaluation. &lt;br&gt;&lt;br&gt; Rolling a 1, 2, 4, or 6 passes you. A 3 and a 5 fails you, and will send you home.]
+
+[Infractions: $infractions]
+[Points: $points]</tw-passagedata><tw-passagedata pid="15" name="t-4" tags="" position="625,1225" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)][Major Acosta is an unfair evaluator. &lt;br&gt;&lt;br&gt;Roll the die to determine the outcome of your evaluation. &lt;br&gt;&lt;br&gt; Rolling a 1, 2, 4, or 6 passes you. A 3 and a 5 fails you, and will send you home.]
 
 {|roll&gt;[(link:&quot;Roll&quot;)[
         (if: $another is 3 or $another is 5)[
-        (replace:?roll)[&lt;br&gt;Trainer 4 failed you. The trainers send you to the commander&#39;s office, and you are sent home. [[Game Over.|start]]]]
+        (replace:?roll)[&lt;br&gt;Major Acosta failed you. The trainers send you to the commander&#39;s office, and you are sent home. [[Game Over.|start]]]]
         (else:)[
         (set: $points to $points +1)
-        (replace:?roll)[&lt;br&gt;Trainer 4 passed you! &lt;shout&gt;&lt;i&gt;+1 point.&lt;/shout&gt;&lt;/i&gt; [[Next Day|td]]]]
+        (replace:?roll)[&lt;br&gt;Major Acosta passed you! &lt;shout&gt;&lt;i&gt;+1 point.&lt;/shout&gt;&lt;/i&gt; [[Next Day|td]]]]
     ]]}
 
-&lt;h5&gt;Infractions: $infraction&lt;/h5&gt;
-&lt;h5&gt;Points: $points&lt;/h5&gt;</tw-passagedata><tw-passagedata pid="16" name="t-5" tags="" position="725,1225" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
-[Trainer 5 is an unfair evaluator. &lt;br&gt;&lt;br&gt;Roll the die to determine the outcome of your evaluation. &lt;br&gt;&lt;br&gt; Rolling a 1, 2, 4, or 6 passes you. A 3 and a 5 fails you, and will send you home.]
+
+[Infractions: $infractions]
+[Points: $points]</tw-passagedata><tw-passagedata pid="16" name="t-5" tags="" position="725,1225" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)][Major Whaley is an unfair evaluator. &lt;br&gt;&lt;br&gt;Roll the die to determine the outcome of your evaluation. &lt;br&gt;&lt;br&gt; Rolling a 1, 2, 4, or 6 passes you. A 3 and a 5 fails you, and will send you home.]
 
 {|roll&gt;[(link:&quot;Roll&quot;)[
         (if: $another is 3 or $another is 5)[
-        (replace:?roll)[&lt;br&gt;Trainer 5 failed you. The trainers send you to the commander&#39;s office, and you are sent home. [[Game Over.|start]]]]
+        (replace:?roll)[&lt;br&gt;Major Whaley failed you. The trainers send you to the commander&#39;s office, and you are sent home. [[Game Over.|start]]]]
         (else:)[
         (set: $points to $points +1)
-        (replace:?roll)[&lt;br&gt;Trainer 5 passed you! &lt;shout&gt;&lt;i&gt;+1 point.&lt;/shout&gt;&lt;/i&gt; [[Next Day|td]]]]
+        (replace:?roll)[&lt;br&gt;Major Whaley passed you! &lt;shout&gt;&lt;i&gt;+1 point.&lt;/shout&gt;&lt;/i&gt; [[Next Day|td]]]]
     ]]}
 
-&lt;h5&gt;Infractions: $infraction&lt;/h5&gt;
-&lt;h5&gt;Points: $points&lt;/h5&gt;</tw-passagedata><tw-passagedata pid="17" name="t-6" tags="" position="825,1225" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
-[Trainer 6 is an unfair evaluator. &lt;br&gt;&lt;br&gt;Roll the die to determine the outcome of your evaluation. &lt;br&gt;&lt;br&gt; Rolling a 1, 2, 4, or 6 passes you. A 3 and a 5 fails you, and will send you home.]
+
+[Infractions: $infractions]
+[Points: $points]</tw-passagedata><tw-passagedata pid="17" name="t-6" tags="" position="825,1225" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)][Captain Serrano is an unfair evaluator. &lt;br&gt;&lt;br&gt;Roll the die to determine the outcome of your evaluation. &lt;br&gt;&lt;br&gt; Rolling a 1, 2, 4, or 6 passes you. A 3 and a 5 fails you, and will send you home.]
 
 {|roll&gt;[(link:&quot;Roll&quot;)[
         (if: $another is 3 or $another is 5)[
-        (replace:?roll)[&lt;br&gt;Trainer 6 failed you. The trainers send you to the commander&#39;s office, and you are sent home. [[Game Over.|start]]]]
+        (replace:?roll)[&lt;br&gt;Captain Serrano failed you. The trainers send you to the commander&#39;s office, and you are sent home. [[Game Over.|start]]]]
         (else:)[
         (set: $points to $points +1)
-        (replace:?roll)[&lt;br&gt;Trainer 6 passed you! &lt;shout&gt;&lt;i&gt;+1 point.&lt;/shout&gt;&lt;/i&gt; [[Next Day|td]]]]
+        (replace:?roll)[&lt;br&gt;Captain Serrano passed you! &lt;shout&gt;&lt;i&gt;+1 point.&lt;/shout&gt;&lt;/i&gt; [[Next Day|td]]]]
     ]]}
 
-&lt;h5&gt;Infractions: $infraction&lt;/h5&gt;
-&lt;h5&gt;Points: $points&lt;/h5&gt;</tw-passagedata><tw-passagedata pid="18" name="t1" tags="" position="325,1125" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
-[Trainer 1 evaluated you fairly! Pass! &lt;shout&gt;&lt;i&gt;+1 point&lt;/i&gt;&lt;/shout&gt; &lt;br&gt;&lt;br&gt; [[Next Day|td]]]
 
-&lt;h5&gt;Infractions: $infraction&lt;/h5&gt;
-&lt;h5&gt;Points: $points&lt;/h5&gt;</tw-passagedata><tw-passagedata pid="19" name="t2" tags="" position="425,1125" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
-[Trainer 2 evaluated you fairly! Pass! &lt;shout&gt;&lt;i&gt;+1 point&lt;/i&gt;&lt;/shout&gt; &lt;br&gt;&lt;br&gt; [[Next Day|td]]]
+[Infractions: $infractions]
+[Points: $points]</tw-passagedata><tw-passagedata pid="18" name="t1" tags="" position="325,1125" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)][Captain Rodriguez evaluated you fairly! Pass! &lt;shout&gt;&lt;i&gt;+1 point&lt;/i&gt;&lt;/shout&gt; &lt;br&gt;&lt;br&gt; [[Next Day|td]]]
 
-&lt;h5&gt;Infractions: $infraction&lt;/h5&gt;
-&lt;h5&gt;Points: $points&lt;/h5&gt;</tw-passagedata><tw-passagedata pid="20" name="t3" tags="" position="525,1125" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
-[Trainer 3 evaluated you fairly! Pass! &lt;shout&gt;&lt;i&gt;+1 point&lt;/i&gt;&lt;/shout&gt; &lt;br&gt;&lt;br&gt; [[Next Day|td]]]
+[Infractions: $infractions]
+[Points: $points]</tw-passagedata><tw-passagedata pid="19" name="t2" tags="" position="425,1125" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)][Major Brown evaluated you fairly! Pass! &lt;shout&gt;&lt;i&gt;+1 point&lt;/i&gt;&lt;/shout&gt; &lt;br&gt;&lt;br&gt; [[Next Day|td]]]
 
-&lt;h5&gt;Infractions: $infraction&lt;/h5&gt;
-&lt;h5&gt;Points: $points&lt;/h5&gt;</tw-passagedata><tw-passagedata pid="21" name="t4" tags="" position="625,1125" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
-[Trainer 4 evaluated you fairly! Pass! &lt;shout&gt;&lt;i&gt;+1 point&lt;/i&gt;&lt;/shout&gt; &lt;br&gt;&lt;br&gt; [[Next Day|td]]]
+[Infractions: $infractions]
+[Points: $points]</tw-passagedata><tw-passagedata pid="20" name="t3" tags="" position="525,1125" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)][Lieutenant Colonel Clark evaluated you fairly! Pass! &lt;shout&gt;&lt;i&gt;+1 point&lt;/i&gt;&lt;/shout&gt; &lt;br&gt;&lt;br&gt; [[Next Day|td]]]
 
-&lt;h5&gt;Infractions: $infraction&lt;/h5&gt;
-&lt;h5&gt;Points: $points&lt;/h5&gt;</tw-passagedata><tw-passagedata pid="22" name="t5" tags="" position="725,1125" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
-[Trainer 5 evaluated you fairly! Pass! &lt;shout&gt;&lt;i&gt;+1 point&lt;/i&gt;&lt;/shout&gt; &lt;br&gt;&lt;br&gt; [[Next Day|td]]]
+[Infractions: $infractions]
+[Points: $points]</tw-passagedata><tw-passagedata pid="21" name="t4" tags="" position="625,1125" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)][Major Acosta evaluated you fairly! Pass! &lt;shout&gt;&lt;i&gt;+1 point&lt;/i&gt;&lt;/shout&gt; &lt;br&gt;&lt;br&gt; [[Next Day|td]]]
 
-&lt;h5&gt;Infractions: $infraction&lt;/h5&gt;
-&lt;h5&gt;Points: $points&lt;/h5&gt;</tw-passagedata><tw-passagedata pid="23" name="t6" tags="" position="825,1125" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
-[Trainer 6 evaluated you fairly! Pass! &lt;shout&gt;&lt;i&gt;+1 point&lt;/i&gt;&lt;/shout&gt; &lt;br&gt;&lt;br&gt; [[Next Day|td]]]
+[Infractions: $infractions]
+[Points: $points]</tw-passagedata><tw-passagedata pid="22" name="t5" tags="" position="725,1125" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)][Major Whaley evaluated you fairly! Pass! &lt;shout&gt;&lt;i&gt;+1 point&lt;/i&gt;&lt;/shout&gt; &lt;br&gt;&lt;br&gt; [[Next Day|td]]]
 
-&lt;h5&gt;Infractions: $infraction&lt;/h5&gt;
-&lt;h5&gt;Points: $points&lt;/h5&gt;</tw-passagedata><tw-passagedata pid="24" name="nowater" tags="" position="525,1475" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
-(if: $nowater is 1)[You were not caught on the way to dinner! The flight made it on time, and filled up water bottles after they ate. &lt;shout&gt;&lt;i&gt;+1 point&lt;/i&gt;&lt;/shout&gt;]
-(else-if: $nowater is 2)[(if: $overwhelm is 1)[(set: $infraction to $infraction +1)The commander ran into your flight on the way to dinner. He recognized you from TD-0 and stopped you to check water bottles. You received an infraction for endangering your flightmates.]
-(else:)[(set:$infraction to $infraction +1)A trainer ran into your flight on the way to dinner. She stopped your flight to check watter bottles. You received an infraction for endangering your flightmates.]]
+[Infractions: $infractions]
+[Points: $points]</tw-passagedata><tw-passagedata pid="23" name="t6" tags="" position="825,1125" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)][Captain Serrano evaluated you fairly! Pass! &lt;shout&gt;&lt;i&gt;+1 point&lt;/i&gt;&lt;/shout&gt; &lt;br&gt;&lt;br&gt; [[Next Day|td]]]
+
+[Infractions: $infractions]
+[Points: $points]</tw-passagedata><tw-passagedata pid="24" name="nowater" tags="" position="525,1475" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)](if: $nowater is 1)[You were not caught on the way to dinner! The flight made it on time, and filled up water bottles after they ate. &lt;shout&gt;&lt;i&gt;+1 point&lt;/i&gt;&lt;/shout&gt; (set: $points to $points +1)](else-if: $nowater is 2)[(if: $overwhelm is 1)[(set: $infractions to $infractions +1)The commander ran into your flight on the way to dinner. He recognized you from TD-0 and stopped you to check water bottles. You received an infraction for endangering your flightmates.](else:)[(set:$infractions to $infractions +1)A trainer ran into your flight on the way to dinner. She stopped your flight to check watter bottles. You received an infraction for endangering your flightmates.]]
 
 [[Next Day|td14]]
 
-&lt;h5&gt;Infractions: $infraction&lt;/h5&gt;
-&lt;h5&gt;Points: $points&lt;/h5&gt;</tw-passagedata><tw-passagedata pid="25" name="missdinner" tags="" position="625,1475" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
-(if: $nowater is 1)[Miraculously, you made it to dinner on time! Several flights let you march in front of them upon hearing you were running late. &lt;shout&gt;&lt;i&gt;+1 point&lt;/i&gt;&lt;/shout&gt;]
-(else-if: $nowater is 2)[jf: $overwhelm is 1)[(set: $infraction to $infraction +1)Your flight arrived at dinner 5 minutes late. The commander was there and recognized you for TD-0. He yelled at you in front of your flight for backing up the dining facility and gave you an infraction.]
-(else:)[(set:$infraction to $infraction +1)Your flight arrived at dinner 5 minutes late. A trainer yelled at you in front of your flight for backing up the dining facility and gave you an infraction.]]
+
+[Infractions: $infractions]
+[Points: $points]</tw-passagedata><tw-passagedata pid="25" name="missdinner" tags="" position="625,1475" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)](if: $nowater is 1)[Miraculously, you made it to dinner on time! Several flights let you march in front of them upon hearing you were running late. &lt;shout&gt;&lt;i&gt;+1 point&lt;/i&gt;&lt;/shout&gt;(set:$points to $points +1)](else-if: $nowater is 2)[jf: $overwhelm is 1)[(set: $infractions to $infractions +1)Your flight arrived at dinner 5 minutes late. The commander was there and recognized you for TD-0. He yelled at you in front of your flight for backing up the dining facility and gave you an infraction.](else:)[(set:$infractions to $infractions +1)Your flight arrived at dinner 5 minutes late. A trainer yelled at you in front of your flight for backing up the dining facility and gave you an infraction.]]
 
 [[Next Day|td14]]
 
-&lt;h5&gt;Infractions: $infraction&lt;/h5&gt;
-&lt;h5&gt;Points: $points&lt;/h5&gt;</tw-passagedata><tw-passagedata pid="26" name="td14" tags="" position="575,1600" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
-&lt;h3&gt;TD-14&lt;/h3&gt;
-&lt;h5&gt;Infractions: $infraction&lt;/h5&gt;
-&lt;h5&gt;Points: $points&lt;/h5&gt;
 
-[Knowledge test day.]
+[Infractions: $infractions]
+[Points: $points]</tw-passagedata><tw-passagedata pid="26" name="td14" tags="" position="575,1600" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)]&lt;h3&gt;TD-14&lt;/h3&gt;[Knowledge test day.]
 
 [For some odd reason, you weren&#39;t aware you had to take a written test while you were here. You didn&#39;t study for this specifically.]
 
@@ -430,9 +383,13 @@ Points: $points
 
 [Good luck.]
 
-[[Start Test.|q1]]
+[[Start Test.|q1]](set: $qs to 0)
 
-(set: $qs to 0)</tw-passagedata><tw-passagedata pid="27" name="q1" tags="" position="575,1725" size="100,100">[What is the letter H in the phonetic alphabet?]
+
+[Infractions: $infractions]
+[Points: $points]
+
+</tw-passagedata><tw-passagedata pid="27" name="q1" tags="" position="575,1725" size="100,100">[What is the letter H in the phonetic alphabet?]
 
 {
 |h1&gt;[
@@ -513,7 +470,7 @@ Points: $points
     ]]
 }</tw-passagedata><tw-passagedata pid="30" name="q4" tags="" position="575,2100" size="100,100">[What air frame is this?]
 
-&lt;img src=&quot;https://annamarieu12.github.io/graphics/f22.jpg&quot; width=&quot;800px&quot;&gt;
+&lt;img src=&quot;https://annamarieu12.github.io/graphics/f22.jpg&quot; width=&quot;500px&quot;&gt;
 
 {
 |t1&gt;[
@@ -567,32 +524,164 @@ Points: $points
 	(set: $qs to $qs +1)
 	(goto: &quot;results&quot;)
     ]]
-}</tw-passagedata><tw-passagedata pid="32" name="results" tags="" position="575,2350" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
-(if: $qs is 4)[You passed the exam with an 80%, great job! &lt;shout&gt;&lt;i&gt;+0.5 point&lt;/i&gt;&lt;/shout&gt; (set: $points to $points +0.5) &lt;br&gt;&lt;br&gt; [[Next Day|TD-17]]]
-(else-if: $qs is 5)[You received a perfect score on the exam, great job! &lt;shout&gt;&lt;i&gt;+1 point&lt;/i&gt;&lt;/shout&gt; (set: $points to $points +1)&lt;br&gt;&lt;br&gt; [[Next Day|TD-17]]]
-(else:)[You failed the exam. The commander calls you into his office and sends you home. [[Game Over.|start]]]
+}</tw-passagedata><tw-passagedata pid="32" name="results" tags="" position="575,2350" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)](if: $qs is 4)[You passed the exam with an 80%, great job! &lt;shout&gt;&lt;i&gt;+0.5 point&lt;/i&gt;&lt;/shout&gt; (set: $points to $points +0.5) &lt;br&gt;&lt;br&gt; [[Next Day|TD-17]]](else-if: $qs is 5)[You received a perfect score on the exam, great job! &lt;shout&gt;&lt;i&gt;+1 point&lt;/i&gt;&lt;/shout&gt; (set: $points to $points +1)&lt;br&gt;&lt;br&gt; [[Next Day|TD-17]]](else:)[You failed the exam. The commander calls you into his office and sends you home. &lt;br&gt;&lt;br&gt;[[Game Over.|start]]]
 
-&lt;h5&gt;Infractions: $infraction&lt;/h5&gt;
-&lt;h5&gt;Points: $points&lt;/h5&gt;
-</tw-passagedata><tw-passagedata pid="33" name="TD-17" tags="" position="575,2475" size="100,100">(if: $infractions is 3)[&lt;shout&gt;!!YOU HAVE THREE INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]
-(if: $infractions is 4)[(goto: &quot;kicked&quot;)]
-&lt;h3&gt;TD-17&lt;/h3&gt;</tw-passagedata><tw-passagedata pid="34" name="kicked" tags="" position="725,125" size="100,100">(set: $kicked to (random: 1,2))
-{
-|kick&gt;[
-(link: &quot;The commander called you into his office. You have received four infractions and are at risk of being kicked out of training.&lt;br&gt;&lt;br&gt;You attempt to sweet talk the commander, explaining how much you want to be here and to succeed.&lt;br&gt;&lt;br&gt;Does it work?&quot;)[
+
+[Infractions: $infractions]
+[Points: $points]
+</tw-passagedata><tw-passagedata pid="33" name="TD-17" tags="" position="575,2475" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)]&lt;h3&gt;TD-17&lt;/h3&gt;
+[You must now display proper leadership ability, and receive a score of 2 or higher (out of 5) to move ahead in military training.]
+
+[For your evaluation, you were picked to lead a team of five through the woods to extract a simulated POW using small unit tactics.]
+
+[Your possible team consists of: &lt;br&gt;&lt;br&gt;C/Howard (6&#39;2 male, 180lbs)&lt;br&gt;C/Ward (5&#39;5 female, 130lbs)&lt;br&gt;C/Anderson (5&#39;3 male, 120lbs)&lt;br&gt;C/Cucchetti (6&#39;1 male, 190lbs)&lt;br&gt;C/Gourley (6&#39;4 male, 190lbs)&lt;br&gt;C/Nielsen (5&#39;4 female, 110lbs)&lt;br&gt;C/Johnson (5&#39;8 male, 130lbs)&lt;br&gt;&lt;br&gt;From this bunch, you must choose four to accompany you on the mission.]
+
+[You must do this as expeditiously and safely as possible. It is possible that you will face enemy fire.]
+
+[[1. C/Howard, C/Gourley, C/Cucchetti, C/Johnson|allmale]]
+[[2. C/Ward, C/Anderson, C/Nielsen, C/Johnson|allsmall]]
+[[3. C/Ward, C/Gourley, C/Cucchetti, C/Anderson|perfect]]
+
+
+[Infractions: $infractions]
+[Points: $points]</tw-passagedata><tw-passagedata pid="34" name="kicked" tags="" position="725,125" size="100,100">(set: $kicked to (random: 1,2)){|kick&gt;[
+(link: &quot;The commander called you into his office. You have received three infractions and are at risk of being kicked out of training.&lt;br&gt;&lt;br&gt;You attempt to sweet talk the commander, explaining how much you want to be here and to succeed.&lt;br&gt;&lt;br&gt;Does it work?&quot;)[
 	(if: $kicked is 1)[
     	(replace: ?kick)[The commander says he does not care. He suggests you find a different career, and then kicks you out. &lt;br&gt;&lt;br&gt;[[Game Over.|start]]]]
     (else-if: $kicked is 2)[The commander gives you another chance, but says you must start training over with the next incoming group. &lt;br&gt;&lt;br&gt; [[Start in next training period.|first]]]
 ]]
 }
 
-</tw-passagedata><tw-passagedata pid="35" name="end" tags="" position="575,3100" size="100,100">&lt;h3&gt;Graduation Day!&lt;/h3&gt;
+</tw-passagedata><tw-passagedata pid="35" name="end" tags="" position="575,2975" size="100,100">&lt;h3&gt;Graduation Day!&lt;/h3&gt;
 [You did it! This is the proudest day of your life. Two years of hard work and grit brought you to this point. On the march back from the graduation field you get a surge of pride and shed a few tears. Now you can go back home to family and relax.]
+
+[You ended with $points points and $infractions infractions.]
 
 [[A journal from my graduation day.|grad]]
 
-&lt;img src=&quot;https://annamarieu12.github.io/graphics/ft.jpeg&quot; width=&quot;600px&quot;&gt;</tw-passagedata><tw-passagedata pid="36" name="judge" tags="" position="575,2975" size="100,100">&lt;h3&gt;Judgement Day&lt;/h3&gt;</tw-passagedata><tw-passagedata pid="37" name="grad" tags="" position="575,3225" size="100,100"></tw-passagedata></tw-storydata>
+&lt;img src=&quot;https://annamarieu12.github.io/graphics/ft.jpeg&quot; width=&quot;600px&quot;&gt;
+
+[[Thanks for staying until the end!|start]]</tw-passagedata><tw-passagedata pid="36" name="jd" tags="" position="575,2725" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)]&lt;h3&gt;Judgement Day&lt;/h3&gt;
+[Last training day. You cruised through most of the day, until your flight was stopped by a trainer.]
+
+[The trainer was checking whether everyone in the flight had half-full water bottles, one last chance to get an infraction before graduating.]
+
+[Your water bottle is EMPTY. You&#39;ll definitely get an infraction. Thankfully, you are in the back of the flight, so you look over at C/$nm and ask if he can pour some of his water into your bottle.](mouseover: &quot;bottle.&quot;)[
+
+(if: $gourley is 1)[&lt;shout&gt;C/Gourley gladly helps and pours some of his water into your bottle, and you avoid getting an infraction. He says that since you risked failing the mission to go back for him yesterday, it was the least he could do.&lt;/shout&gt;](else-if: $gourley is 2)[&lt;shout&gt;C/Gourley refuses to help you, saying that because you refused to go back for him yesterday, he won&#39;t help you. You receive an infraction. (set: $infractions to $infractions +1)&lt;/shout&gt;](else:)[&lt;shout&gt;C/$nm refuses to help you, saying they are mad at you for letting them get captured yesterday. You receive an infraction. (set: $infractions to $infractions +1)&lt;/shout&gt;]]
+
+
+[[Now for the real question, do you graduate?|now]]
+
+
+[Infractions: $infractions]
+[Points: $points]</tw-passagedata><tw-passagedata pid="37" name="grad" tags="" position="575,3100" size="100,100">[February 14, 2023: The day that I signed to play volleyball at the collegiate level at the United States Coast Guard Academy.]
+
+[This day was a long time coming, I started my recruitment process with USCGA my sophomore year in high school. I knew the Lord had called me to military service since I was a freshman in high school, but I also wanted to play volleyball for as long as possible.]
+
+[USCGA seemed perfect. It was the closest of all military academies, the USCG seemed a bit safer, and I would get to play volleyball. They told me I was their top recruit. While they only had a few letters of recommendations they could give out to ensure a recruit was accepted into the Academy, I was promised their first one.]
+
+[After signing, however, I did not have the sense of relief I thought I would have. No no, quite the opposite. I could not rest. Not for months. Something was wrong. Very wrong. My stomach was always churning, my heart racing, and mind never at rest.]
+
+[Soon after, in March, I received a full-ride Air Force ROTC scholarship. My dream school since birth, [[UNC|cute]], had accepted me in January, and they had an AFROTC program.]
+
+[I prayed a LOT about it for two months. In April, I realized the answer. But it was scary. So many people had been with me for my Coast Guard journey. Articles written about me, a whole signing ceremony, everything. But I couldn&#39;t make a life decision this big based on other people. It had to be based on me and what I wanted for MY life.]
+
+[I decommitted. Easily one of the hardest conversations I&#39;ve ever had in my life was with Coach Thomas, explaining that I was no longer coming. But I was excited nevertheless for my next chapter with the Air Force. Maybe I&#39;d be a pilot! I was going to UNC, the same school as my mom! (And later, my [[dad!|dad]])]
+
+[I have never questioned my final decision for one second. I have wholeheartedly enjoyed my time with Detachment 590. The people are my best friends, an immediate community.]
+
+[I am forever grateful for the opportunity I was provided here. I am forever Detachment 590 and I will forever remember to &lt;i&gt;Fly, Fight, and Win.&lt;/i&gt;]</tw-passagedata><tw-passagedata pid="38" name="tumor" tags="" position="725,250" size="100,100">&lt;h3&gt; Freshman year of college&lt;/h3&gt;&lt;audio src = &quot;https://annamarieu12.github.io/moonglow2.mp3&quot; autoplay loop&gt;&lt;/audio&gt;
+
+[&lt;i&gt;Oh no. What is that?&lt;/i&gt; I thought. I panicked. Kept it to myself for a few days, but the anxiety would not escape me. So I showed my mom. She was just as worried by the golf ball sized lump on my upper body.]
+
+[Surgery. I needed surgery and removal. I had a tumor, that&#39;s what the doctor told me after medication, four doctor&#39;s visits, and an ultrasound. First I needed a biopsy, to hopefully rule out cancer. Since it was affecting my quality of life, it had to be taken out regardless.]
+
+[But what about my career? It hinged on my ability to perform physically, to be medically qualified, and obviously to workout. All things of which were up in the air after the surgery.]
+
+[Against all odds, I did it. It was an invasive, non-cancerous (Praise the Lord) tumor, removed in June 2024. The hardest year of my life. Especially following the second emergency surgery I had that November to remove my appendix.]
+
+[But against all odds, I returned to a physical shape that was even better than where I was before. I ran a half marathon five months after the second surgery. I received a slot to attend military training. Again, things that were not a guarantee a few months before.]
+
+[Attending training meant so much to me. It was a privilege, not a right. It was nothing to complain about, because others didn&#39;t make it there. But I did. And that in itself was an opportunity.]
+
+&lt;img src=&quot;https://annamarieu12.github.io/graphics/tumor.jpeg&quot; width=&quot;600px&quot;&gt;
+
+[[Return to simulation.|first]]</tw-passagedata><tw-passagedata pid="39" name="allmale" tags="" position="575,2600" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)][While navigating through the woods, you quickly realize you made a mistake when choosing your team.]
+
+[You did not account for having to be stealthy. Your team, being made up of the four tallest, heaviest men, is very loud.]
+
+[Your team is quickly identified by the enemy and surrounded by fire.]
+
+[The mission is quickly failed as your team is overrun, and C/Howard is taken captive. The evaluator gives you an infraction for poor mission planning. (set: $infractions to $infractions +1)]
+
+[[Go to Final Day|jd]]
+
+
+[Infractions: $infractions]
+[Points: $points]
+(set: $nm to &quot;Howard&quot;)</tw-passagedata><tw-passagedata pid="40" name="allsmall" tags="" position="700,2600" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)][While navigating through the woods, you quickly realize you made a mistake when choosing your team.]
+
+[You did not account for needing strength and size to carry your equipment, and picked the smallest individuals to be part of your team.]
+
+[Your team is quickly identified by the enemy after struggling to move quickly through the woods and surrounded by fire.]
+
+[The mission is quickly failed as your team is overrun and C/Anderson is taken captive. The evaluator gives you an infraction for poor mission planning. (set: $infractions to $infractions +1)]
+
+[[Go to Final Day|jd]]
+
+
+[Infractions: $infractions]
+[Points: $points]
+
+(set: $nm to &quot;Anderson&quot;)</tw-passagedata><tw-passagedata pid="41" name="perfect" tags="" position="450,2600" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)][Your team moves perfectly through the woods.](set: $points to $points +1)
+
+[C/Cucchetti and C/Gourley take most of the load (things to carry) and C/Ward and C/Anderson is able to move steathily. In fact, upon hearing noises through the woods, you sent C/Anderson to steathily investigate, and he was able to identify enemies close by without being detected! &lt;shout&gt;&lt;i&gt;+1 point&lt;/shout&gt;&lt;/i&gt;]
+
+[However, upon arriving to the scene where the simulated POW was identified to be, your team encounters SEVERE enemy fire.]
+
+[Your team is able to extract the simulated POW anyways, with minimal loss of equipment/injury. You notice, however, while on your way back that C/Gourley is not with your team. What do you do?]
+
+[[Risk failure of the mission by running out of time and go back for C/Gourley.|nah]]
+
+[[The first priority is the mission, C/Gourley probably got taken by the enemy anyways.|boo]]
+
+
+[Infractions: $infractions]
+[Points: $points]
+(set: $nm to &quot;Gourley&quot;)</tw-passagedata><tw-passagedata pid="42" name="nah" tags="" position="325,2550" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)](set: $roll to (random: 1,2))(if: $roll is 1)[The team successfully saved C/Gourley, but did not make it back in time and failed the mission. However, the evaluator was impressed at your persistence in not leaving a comrade behind, and passed you anyways. &lt;shout&gt;&lt;i&gt;+1 point&lt;/shout&gt;&lt;/i&gt;(set:$points to $points +1)](else-if: $roll is 2)[The team successfully saved C/Gourley, and made it back in time! Your evaluator passed you with flying colors. &lt;shout&gt;&lt;i&gt;+2 points&lt;/shout&gt;&lt;/i&gt;(set: $points to $points +2)]
+
+[[Go to Final Day|jd]]
+
+
+[Infractions: $infractions]
+[Points: $points]
+(set: $gourley to 1)</tw-passagedata><tw-passagedata pid="43" name="boo" tags="" position="325,2650" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)][Your evaluator FAILED you for leaving a cadet behind. This is never the answer. They gave you an infraction and yelled at you to never do that again.]
+
+[[Go to Final Day|jd]](set: $gourley to 2)(set: $infractions to $infractions +1)
+
+
+[Infractions: $infractions]
+[Points: $points]
+</tw-passagedata><tw-passagedata pid="44" name="cute" tags="" position="450,3100" size="100,100">[Me in my UNC onesie as a newborn!]
+&lt;img src=&quot;https://annamarieu12.github.io/graphics/unc.jpg&quot; width=&quot;300px&quot;&gt;
+[Me with Luke Maye, former UNC basketball star (was convinced I would marry him as a 10-year-old).]
+&lt;img src=&quot;https://annamarieu12.github.io/graphics/unc2.jpeg&quot; width=&quot;300px&quot;&gt;
+[Me at a UNC volleyball camp, age 13.]
+&lt;img src=&quot;https://annamarieu12.github.io/graphics/unc3.JPG&quot; width=&quot;300px&quot;&gt;
+[[back|grad]]</tw-passagedata><tw-passagedata pid="45" name="dad" tags="" position="575,3225" size="100,100">[My [[dad|daddy]] is a South African immigrant, who came to America in 2001 with my two older sisters.]
+
+[The most determined and motivated man I have ever known and will ever know, he came from nothing, immigrated with nothing, but built a life for himself here.]
+
+[He met my mom in Michigan, where they had me, and then moved to Charlotte and had my little sister Geena.]
+
+[My dad has worked extremely hard over the years to be successful in his career, but also to be present as a husband and father. After I left for school, he decided to do something he never thought he&#39;d have time for.]
+
+[He went back to school! My dad will graduate next May (same time as me!) with a Masters in Applied Data Science. Pretty cool in my opinion.]
+
+[[back|grad]]</tw-passagedata><tw-passagedata pid="46" name="now" tags="" position="575,2850" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)](if: $points is &gt;=6.5 and $infractions is &lt;3)[(goto: &quot;end&quot;)](else:)[[[You did not get 6.5 points throughout training, and have therefore failed. You must start training over with the next group.|start]]]</tw-passagedata><tw-passagedata pid="47" name="daddy" tags="" position="575,3350" size="100,100">&lt;img src=&quot;https://annamarieu12.github.io/graphics/dad.jpeg&quot; width=&quot;600px&quot;&gt;
+
+[[back|end]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
