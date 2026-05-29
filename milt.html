@@ -18,24 +18,25 @@
 
 tw-link, .enchantment-link {
     color: white !important;
-    background-color: black !important;
+    background-color: rgba(38, 36, 29) !important;
     padding: 2px 4px; /* Adds space around the text */
 }
 
 tw-link:hover, .enchantment-link:hover {
-    color: black !important;
+    color: rgba(38, 36, 29) !important;
     background-color: white !important; /* Inverts colors on hover */
 }
 tw-sidebar {
     display: none !important;
 }
 
-
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.storyAudio = new Audio("https://annamarieu12.github.io/noise.mp3");
+tw-passage{
+  background-color: rgba(88, 89, 65);
+  padding: 5%;</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.storyAudio = new Audio("https://annamarieu12.github.io/noise.mp3");
 window.storyAudio.loop = true;
 window.storyAudio.volume = 0.3;</script><tw-passagedata pid="1" name="start" tags="" position="575,125" size="100,100">&lt;h2&gt;Military Training Simulation&lt;/h2&gt;
-
 [[Score 6.5 points and graduate to win.|first]]
+
 </tw-passagedata><tw-passagedata pid="2" name="second" tags="" position="575,375" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)][Finals hit. You&#39;re a STEM major.]
 
 [You have to think about job selection in the fall. GPA matters.]
@@ -110,12 +111,7 @@ What do you do?
 
 [[Go celebrate with friends and fellow cadets!|second]]
 
-[[Stay in and take a nap.|second]]
-
-(set: $pt to 0)
-(set: $infractions to 0)
-(set: $points to 0)
-&lt;audio src = &quot;https://annamarieu12.github.io/nature.mp3&quot; autoplay loop&gt;&lt;/audio&gt;</tw-passagedata><tw-passagedata pid="6" name="yay" tags="" position="625,750" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)](set: $points to $points +1)[While taking in the overwhelming noises, you hear another cadet getting yelled at for entering the wrong in-processing line. They are getting an infraction for it.]
+[[Stay in and take a nap.|second]](set: $pt to 0)(set: $infractions to 0)(set: $points to 0)&lt;audio src = &quot;https://annamarieu12.github.io/nature.mp3&quot; autoplay loop&gt;&lt;/audio&gt;</tw-passagedata><tw-passagedata pid="6" name="yay" tags="" position="625,750" size="100,100">(if: $infractions is 2)[(background: red) + (color: white)[&lt;shout&gt;!!YOU HAVE TWO INFRACTIONS. EARN ONE MORE AND RISK GETTING KICKED OUT!!&lt;/shout&gt;&lt;br&gt;&lt;br&gt;]](if: $infractions is 3)[(goto: &quot;kicked&quot;)](set: $points to $points +1)[While taking in the overwhelming noises, you hear another cadet getting yelled at for entering the wrong in-processing line. They are getting an infraction for it.]
 
 [You were about to make the same mistake!]
 
@@ -544,7 +540,7 @@ Points: $points
 
 
 [Infractions: $infractions]
-[Points: $points]</tw-passagedata><tw-passagedata pid="34" name="kicked" tags="" position="725,125" size="100,100">(set: $kicked to (random: 1,2)){|kick&gt;[
+[Points: $points]</tw-passagedata><tw-passagedata pid="34" name="kicked" tags="" position="700,125" size="100,100">(set: $kicked to (random: 1,2)){|kick&gt;[
 (link: &quot;The commander called you into his office. You have received three infractions and are at risk of being kicked out of training.&lt;br&gt;&lt;br&gt;You attempt to sweet talk the commander, explaining how much you want to be here and to succeed.&lt;br&gt;&lt;br&gt;Does it work?&quot;)[
 	(if: $kicked is 1)[
     	(replace: ?kick)[The commander says he does not care. He suggests you find a different career, and then kicks you out. &lt;br&gt;&lt;br&gt;[[Game Over.|start]]]]
@@ -591,7 +587,7 @@ Points: $points
 
 [I have never questioned my final decision for one second. I have wholeheartedly enjoyed my time with Detachment 590. The people are my best friends, an immediate community.]
 
-[I am forever grateful for the opportunity I was provided here. I am forever Detachment 590 and I will forever remember to &lt;i&gt;Fly, Fight, and Win.&lt;/i&gt;]</tw-passagedata><tw-passagedata pid="38" name="tumor" tags="" position="725,250" size="100,100">&lt;h3&gt; Freshman year of college&lt;/h3&gt;&lt;audio src = &quot;https://annamarieu12.github.io/moonglow2.mp3&quot; autoplay loop&gt;&lt;/audio&gt;
+[I am forever grateful for the opportunity I was provided here. I am forever Detachment 590 and I will forever remember to &lt;i&gt;Fly, Fight, and Win.&lt;/i&gt;]</tw-passagedata><tw-passagedata pid="38" name="tumor" tags="" position="700,250" size="100,100">&lt;h3&gt; Freshman year of college&lt;/h3&gt;&lt;audio src = &quot;https://annamarieu12.github.io/moonglow2.mp3&quot; autoplay loop&gt;&lt;/audio&gt;
 
 [&lt;i&gt;Oh no. What is that?&lt;/i&gt; I thought. I panicked. Kept it to myself for a few days, but the anxiety would not escape me. So I showed my mom. She was just as worried by the golf ball sized lump on my upper body.]
 
